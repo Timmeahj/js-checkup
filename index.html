@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js checkup</title>
+</head>
+<body>
+    <h1>Js checkup</h1>
+    <p>Press the button below and you'll get a random js exercise assigned.</p>
+    <button id="go">Let's go!</button>
+    <p id="target"></p>
+    <script>
+        document.getElementById('go').addEventListener('click', function () {
+            const list = [
+                "1.1",
+                "1.2"
+            ];
+            function randomBetween(min, max) {
+                return Math.floor(Math.random() * (max - min + 1) + min);
+            }
+            document.getElementById('target').innerHTML = list[randomBetween(0, list.length)];
+        });
+    </script>
+</body>
+</html>
