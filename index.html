@@ -11,7 +11,11 @@
     <button id="hard">Harder</button>
     <p id="target"></p>
     <script>
+        let clicked = false;
         document.getElementById('easy').addEventListener('click', function () {
+            if(clicked){
+                return;
+            }
             const list = [
                 "2.2",
                 "2.3",
@@ -31,8 +35,12 @@
                 return Math.floor(Math.random() * (max - min + 1) + min);
             }
             document.getElementById('target').innerHTML = list[randomBetween(0, list.length-1)];
+            clicked = true;
         });
         document.getElementById('hard').addEventListener('click', function () {
+            if(clicked){
+                return;
+            }
             const list = [
                 "2.5",
                 "2.6",
@@ -46,6 +54,7 @@
                 return Math.floor(Math.random() * (max - min + 1) + min);
             }
             document.getElementById('target').innerHTML = list[randomBetween(0, list.length-1)];
+            clicked = true;
         });
     </script>
 </body>
